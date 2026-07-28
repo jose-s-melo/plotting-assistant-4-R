@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain_mistralai import ChatMistralAI
 
 from prompt import chart_prompt
-from models.chart_spec import ChartSpec
+from app.models.chart_spec import ChartSpec
 
 load_dotenv()
 
@@ -21,7 +21,7 @@ llm = ChatMistralAI(
 
 structured_llm = llm.with_structured_output(ChartSpec)
 
-chain = llm | structured_llm
+chain = chart_prompt | structured_llm
 
 def generate_chart(question: str):
     return chain.invoke(
