@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Literal, Optional
 
 class ChartSpec(BaseModel):
-    chart_type = Literal[
+    chart_type: Literal[
         "bar",
         "line",
         "scatter",
