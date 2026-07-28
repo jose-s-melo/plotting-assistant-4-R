@@ -9,3 +9,8 @@ class ChartSpec(BaseModel):
         "pie",
         "histogram"
     ]
+    
+    title: str
+    x: str
+    y: Optional[str] = None
+    color: Optional[str] = None
